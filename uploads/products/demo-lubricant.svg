@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700">
+  <rect width="900" height="700" fill="#ecfeff"/>
+  <rect x="75" y="70" width="750" height="560" rx="34" fill="#fff" stroke="#bae6fd" stroke-width="5"/>
+  <rect x="350" y="145" width="200" height="360" rx="28" fill="#005b9f"/>
+  <rect x="383" y="95" width="134" height="70" rx="16" fill="#0f172a"/>
+  <rect x="380" y="245" width="140" height="115" rx="14" fill="#fff"/>
+  <path d="M450 375c42 45 70 82 70 125 0 38-31 70-70 70s-70-32-70-70c0-43 28-80 70-125z" fill="#00a6e8"/>
+  <text x="450" y="315" text-anchor="middle" font-family="Arial" font-size="28" font-weight="800" fill="#0f172a">LUBE</text>
+  <text x="450" y="620" text-anchor="middle" font-family="Arial" font-size="42" font-weight="800" fill="#0f172a">Industrial Lubricant</text>
+</svg>

@@ -1,0 +1,6 @@
+/logs/*
+!/logs/.gitkeep
+/.htaccess.bk
+/.htaccess_original
+/11.htaccess
+/bmj-pyramids.zip

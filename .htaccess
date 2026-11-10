@@ -1,0 +1,44 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Existing files and directories load normally.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Frontend clean URLs.
+  RewriteRule ^$ public/index.php [L]
+  RewriteRule ^shop/?$ public/shop.php [L,QSA]
+  RewriteRule ^shop/([A-Za-z0-9-]+)/?$ public/shop.php?category=$1 [L,QSA]
+  RewriteRule ^product/([A-Za-z0-9-]+)/?$ public/product.php?slug=$1 [L,QSA]
+  RewriteRule ^cart/?$ public/cart.php [L,QSA]
+  RewriteRule ^checkout/?$ public/checkout.php [L,QSA]
+  RewriteRule ^login/?$ public/login.php [L,QSA]
+  RewriteRule ^signup/?$ public/signup.php [L,QSA]
+  RewriteRule ^logout/?$ public/logout.php [L,QSA]
+  RewriteRule ^my-account/?$ public/my-account.php [L,QSA]
+  RewriteRule ^about/?$ public/about.php [L,QSA]
+  RewriteRule ^contact/?$ public/contact.php [L,QSA]
+</IfModule>
+
+# Protect backend/source files from direct browser access.
+RedirectMatch 403 ^/(includes|logs)/
+
+<FilesMatch "^(database\.sql|INSTALL\.md|CUSTOMIZATION\.md|MARKETING_HANDOFF\.md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Basic security headers.
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

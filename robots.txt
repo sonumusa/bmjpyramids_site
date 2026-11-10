@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /logs/
+
+Sitemap: https://www.bmjpyramids.com/sitemap.xml
